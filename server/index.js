@@ -1,6 +1,12 @@
 const Koa = require('koa');
 const app = new Koa();
+const mongoose = require("mongoose");
+const { connect, initSchemas } = require("./dbs/dbs.init");
 
+(async () => {
+    await connect();
+    initSchemas();
+})()
 
 // 引入路由分发
 const router = require('./routes')

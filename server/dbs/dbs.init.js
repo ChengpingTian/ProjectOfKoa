@@ -1,9 +1,19 @@
 const mongoose = require('mongoose')
-const db = "mongodb://localhost/smile-db"
+const db = "mongodb://localhost/jstian"
+
+
+const glob = require("glob");
+const {
+    resolve
+} = require("path");
 
 exports.connect = () => {
+    mongoose.set('useCreateIndex', true) //加上这个
     //连接数据库
-    mongoose.connect(db)
+    mongoose.connect(db, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
 
     let maxConnectTimes = 0
 
@@ -43,3 +53,6 @@ exports.connect = () => {
     })
 
 }
+exports.initSchemas = () => {
+  glob.sync(resolve(__dirname, "../schema/", "**/*.js")).forEach(require);
+};

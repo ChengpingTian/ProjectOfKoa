@@ -4,5 +4,5 @@
 const router = require('koa-router')()
 const controllers = require('../controllers')
 
-router.get('/todo',controllers.todo)
+router.get('/',controllers.todo)
 module.exports = router
