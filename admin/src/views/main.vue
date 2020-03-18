@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
 
@@ -62,16 +63,28 @@ components: {},
       }
     },
 //监听属性 类似于data概念
-computed: {},
+computed: {
+  
+},
 //监控data中的数据变化
 watch: {},
 //方法集合
 methods: {
-
+   getinfo(){
+     axios({
+       url:"http://localhost:3000/",
+       method: 'get',
+     })
+    .then(response => {
+        console.log(response)
+    })
+    .catch(() => {     
+    })
+   }
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
-
+  this.getinfo()
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
