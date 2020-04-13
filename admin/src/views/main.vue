@@ -6,9 +6,9 @@
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>内容管理</template>
         <el-menu-item-group>
-          <template slot="title">分类</template>
+          <template slot="title">文章分类</template>
           <el-menu-item index="/category/edit">新建分类</el-menu-item>
-          <el-menu-item index="/category/list">分类列表</el-menu-item>
+          <el-menu-item index="/category/AticalList">分类列表</el-menu-item>
         </el-menu-item-group>
        </el-submenu>
      
@@ -76,7 +76,7 @@ methods: {
        method: 'get',
      })
     .then(response => {
-        console.log(response)
+        console.log(response.data.message)
     })
     .catch(() => {     
     })

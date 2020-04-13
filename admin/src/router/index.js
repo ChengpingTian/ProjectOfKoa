@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '../views/main.vue'
 import Categoryedit from '../views/Categoryedit'
+import AticalList from '../views/AticalList'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,9 @@ const routes = [
     children:[{
       path:"/category/edit",
       component:Categoryedit
+    }, {
+      path: "/category/AticalList",
+      component: AticalList
     }]
   }
   // {

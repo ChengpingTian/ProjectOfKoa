@@ -31,7 +31,7 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
-    return response;
+    return response.data.data.data;
   },
   function(error) {
     // Do something with response error
@@ -39,7 +39,7 @@ _axios.interceptors.response.use(
   }
 );
 
-Plugin.install = function(Vue, options) {
+Plugin.install = function(Vue) {
   Vue.axios = _axios;
   window.axios = _axios;
   Object.defineProperties(Vue.prototype, {
